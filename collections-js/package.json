@@ -1,0 +1,29 @@
+{
+  "name": "collections-js",
+  "description": "Vanilla JavaScript ES collections inspired by .NET for Node.js and the browser.",
+  "version": "1.0.0-beta",
+  "main": "index.js",
+  "author": {
+    "name": "shivayl (João Neves)",
+    "url": "https://shivayl.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/collections-js",
+  "readme": "https://github.com/joao-neves95/collections-js/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/collections-js"
+  },
+  "bugs": {
+    "url": "https://github.com/joao-neves95/collections-js/issues"
+  },
+  "deprecated": false,
+  "keywords": [
+    "collections",
+    "data structures",
+    ".net.js",
+    "module",
+    "utility",
+    "utilities"
+  ]
+}
