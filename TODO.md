@@ -1,6 +1,10 @@
 ﻿# TODO
 
 - **Add tests**
+
+- Add support for adding multiple items on the add() methods.
+
 - Add:
-  - removeLast()
-  - removeFirst()
+  - <Collection> removeLast()
+  - <Collection> removeFirst()
+  - <Dictionary> getAllKeys()

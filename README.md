@@ -21,7 +21,7 @@ npm install collections-js
 and use it like:
 
 ```
-const { Dictionary, List } = require('collections-js');
+const { Dictionary, List } = require( 'collections-js' );
 const myDict = new Dictionary();
 const myList = new List();
 ```

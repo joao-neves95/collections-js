@@ -62,7 +62,7 @@ class Collection {
   /**
    * Get all elements from the Collection.
    * For Dictionary is best to use .getAllValues()
-   *
+   * 
    * Returns elements[]
    */
   getAll() {
@@ -85,7 +85,7 @@ class Collection {
   }
 
   /**
-   * (private)
+   * (private) 
    */
   __forEach( Callback ) {
     for ( let i = 0; i < this.elements.length; ++i ) {
@@ -120,16 +120,19 @@ try {
 }
 
 let ____errors1;
+let ____collection1;
 
 try {
   'use strict';
   ____errors1 = require( './errors' );
+  ____collection1 = require( './collection' );
 
 } catch ( e ) {
   ____errors1 = Errors;
+  ____collection1 = Collection;
 }
 
-class Dictionary extends Collection {
+class Dictionary extends ____collection1 {
   /**
    * Dictionary of key-value pairs.
    * @param {Boolean} uniqueKeys Whether the keys should be unique or not.
@@ -281,19 +284,22 @@ try {
 }
 
 let ____errors2;
+let ____collection2;
 
 try {
   'use strict';
   ____errors2 = require( './errors' );
+  ____collection2 = require( './collection' );
 
 } catch ( e ) {
   ____errors2 = Errors;
+  ____collection2 = ____collection2;
 }
 
 
-class List extends Collection {
+class List extends ____collection2 {
   /**
-   *
+   * 
    * The Type of the list.
    * @param {String} type
    * ('string' | 'number' | 'int' | 'float' | 'boolean' | 'any')
