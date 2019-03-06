@@ -2,19 +2,32 @@
 
 &nbsp;
 
-#### *v1.0.0-beta.3 - 06/03/2019
+
+#### *v1.0.0 - 06/03/2019
+
+  - Remove from beta.
+
+
+&nbsp;
+
+
+#### v1.0.0-beta.3 - 06/03/2019
 
   - Name change to publish on npm ("collections-js" -> "js.system.collections");
   - Other fixes.
 
+
 &nbsp;
+
 
 #### v1.0.0-beta.2 - 06/03/2019
 
   - Some fixes to make collections-js compatible for use on Node.js;
   - Added some temporary tests.
 
+
 &nbsp;
+
 
 #### v1.0.0-beta.1 - 05/03/2019
 
