@@ -4,7 +4,8 @@
 
 #### *v1.0.0-beta.3 - 06/03/2019
 
-  - Name change to publish on npm ("collections-js" -> "js.system.collections").
+  - Name change to publish on npm ("collections-js" -> "js.system.collections");
+  - Other fixes.
 
 &nbsp;
 

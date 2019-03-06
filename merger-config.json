@@ -13,14 +13,14 @@
 			"source": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\js.system.collections.header.js",
 			"output": {
 				"path": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\dist",
-				"name": "js.system.collections.header.js"
+				"name": "js.system.collections.js"
 			}
 		},
 		{
 			"source": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\js.system.collections.min.header.js",
 			"output": {
 				"path": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\dist",
-				"name": "js.system.collections.min.header.js"
+				"name": "js.system.collections.min.js"
 			}
 		}
 	],
