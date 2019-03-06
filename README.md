@@ -1,5 +1,7 @@
 ﻿# collections-js
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/joao-neves95/collections-js.svg)](https://greenkeeper.io/)
+
 Vanilla JavaScript ES collections inspired by .NET for Node.js and the browser. <br>
 This is an alpha version. It has been used in production, but **it has no tests**.
 
