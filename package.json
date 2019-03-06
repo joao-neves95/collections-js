@@ -19,12 +19,12 @@
   },
   "deprecated": false,
   "keywords": [
-    "collections",
-    "data structures",
-    ".net.js",
     "module",
     "utility",
     "utilities",
+    "data structures",
+    "dotnet",
+    "collections",
     "dictionary",
     "list"
   ]
