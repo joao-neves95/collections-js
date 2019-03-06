@@ -1,15 +1,24 @@
 /*
- * Copyright (c) 2019 Jo�o Pedro Martins Neves - All Rights Reserved.
+ * Copyright (c) 2019 João Pedro Martins Neves - All Rights Reserved.
  *
  * js.system.collections is licensed under the MIT license,
  * located in the root of this project, under the name "LICENSE.md".
  *
  */
 
+// Temporary.
 // @import './lib/errors'
 // @import './lib/collection'
 // @import './lib/dictionary'
 // @import './lib/list'
+
+/*
+ * Copyright (c) 2019 João Pedro Martins Neves - All Rights Reserved.
+ *
+ * js.system.collections is licensed under the MIT license,
+ * located in the root of this project, under the name "LICENSE.md".
+ *
+ */
 
 try {
   'use strict';
@@ -32,6 +41,14 @@ try {
 } catch ( e ) {
   //;
 }
+
+/*
+ * Copyright (c) 2019 João Pedro Martins Neves - All Rights Reserved.
+ *
+ * js.system.collections is licensed under the MIT license,
+ * located in the root of this project, under the name "LICENSE.md".
+ *
+ */
 
 let ____errors0;
 
@@ -126,6 +143,14 @@ try {
 } catch ( e ) {
   //;
 }
+
+/*
+ * Copyright (c) 2019 João Pedro Martins Neves - All Rights Reserved.
+ *
+ * js.system.collections is licensed under the MIT license,
+ * located in the root of this project, under the name "LICENSE.md".
+ *
+ */
 
 let ____errors1;
 let ____collection1;
@@ -290,6 +315,14 @@ try {
 } catch ( e ) {
   //;
 }
+
+/*
+ * Copyright (c) 2019 João Pedro Martins Neves - All Rights Reserved.
+ *
+ * js.system.collections is licensed under the MIT license,
+ * located in the root of this project, under the name "LICENSE.md".
+ *
+ */
 
 let ____errors2;
 let ____collection2;
