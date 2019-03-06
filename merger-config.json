@@ -1,0 +1,28 @@
+{
+	"mergerJsLinks": {
+		"npm": "https://www.npmjs.com/package/merger-js",
+		"github": "https://github.com/joao-neves95/merger-js",
+		"readme": "https://github.com/joao-neves95/merger-js/blob/master/README.md",
+		"changelog": "https://github.com/joao-neves95/merger-js/blob/master/CHANGELOG.md"
+	},
+	"uglify": false,
+	"autoBuild": false,
+	"notifications": false,
+	"sourceFiles": [
+		{
+			"source": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\js.system.collections.header.js",
+			"output": {
+				"path": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\dist",
+				"name": "js.system.collections.header.js"
+			}
+		},
+		{
+			"source": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\js.system.collections.min.header.js",
+			"output": {
+				"path": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\dist",
+				"name": "js.system.collections.min.header.js"
+			}
+		}
+	],
+	"updateOnLaunch": true
+}
