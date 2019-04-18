@@ -8,3 +8,5 @@
   - \<Collection\> removeLast()
   - \<Collection\> removeFirst()
   - \<Dictionary\> getAllKeys()
+
+- Add more errors and ```throw``` them.
