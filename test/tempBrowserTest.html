@@ -27,8 +27,9 @@
     myDict.add('one', 'This is one.');
     myDict.add('two', 'This is two.');
     myDict.add('three', 'This is three.');
-
     console.debug('Is the Dictionay empty?', myDict.isEmpty);
+
+    console.debug(myDict.getByKey('three'));
     console.debug(myDict.getAllValues());
 
     console.debug('Give an error now. \nAdd an item with an exixting key:');

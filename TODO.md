@@ -1,4 +1,6 @@
-﻿# TODO
+# TODO
+
+- Fix the Dictionary according to the new benchmarks.
 
 - **Add tests**
 
@@ -10,3 +12,5 @@
   - \<Dictionary\> getAllKeys()
 
 - Add more errors and ```throw``` them.
+
+- Add CDN use cases.

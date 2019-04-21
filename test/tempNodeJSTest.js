@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 João Pedro Martins Neves - All Rights Reserved.
+ * Copyright (c) 2019 Joï¿½o Pedro Martins Neves - All Rights Reserved.
  *
  * js.system.collections is licensed under the MIT license,
  * located in the root of this project, under the name "LICENSE.md".
@@ -24,8 +24,9 @@ const { Dictionary, List } = require('../index');
     myDict.add('one', 'This is one.');
     myDict.add('two', 'This is two.');
     myDict.add('three', 'This is three.');
-
     console.debug('Is the Dictionay empty?', myDict.isEmpty);
+
+    console.debug(myDict.getByKey('three'));
     console.debug(myDict.getAllValues());
 
     console.debug('Give an error now. \nAdd an item with an exixting key:');
