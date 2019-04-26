@@ -6,6 +6,8 @@
 
 - Add:
   - \<Dictionary\> getAllKeys().
+  - \<Dictionary\> containsKey(key).
+  - \<List>\ containsValue(value).
   
 - Add type safety to the dictionary's keys and values.
 
