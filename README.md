@@ -10,12 +10,11 @@ This is a beta version. It has been used in production, but **it has no tests**.
 
 ### Install with NPM to use js.system.collections on Node.js
 
-
 ```
 npm i js.system.collections
 ```
-or
 
+or
 
 ```
 npm install js.system.collections
@@ -29,13 +28,28 @@ const myDict = new Dictionary();
 const myList = new List();
 ```
 
+
 ### Use js.system.collections on the browser
 
 ```
 <script src="js.system.collections.min.js"></script>
 ```
 
+or
+
+```
+<script src="">https://cdn.jsdelivr.net/gh/joao-neves95/js.system.collections/dist/js.system.collections.min.js</script>
+```
+
+or
+
+```
+<script src="https://raw.githubusercontent.com/joao-neves95/js.system.collections/master/dist/js.system.collections.min.js"></script>
+```
+
+
 &nbsp;
+
 
 ## API
 
@@ -44,6 +58,8 @@ const myList = new List();
   - isEmpty
   - getAll()
   - clear()
+  - removeFirst()
+  - removeLast()
 
 - Dictionary( uniqueKeys = false )
   - lastValue

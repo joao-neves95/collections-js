@@ -1,9 +1,19 @@
-﻿# Changelog
+# Changelog
+
 
 &nbsp;
 
 
-#### *v1.0.0 - 06/03/2019
+#### *v1.1.0 - 26/04/2019
+
+  - Fixed the Dictionary getByKey and findIndexOfKey methods according to the new benchmarks. Big performance improvement;
+  - Added the removeFirst() and removeLast() methods to the Collection class (common methods).
+
+
+&nbsp;
+
+
+#### v1.0.0 - 06/03/2019
 
   - Remove from beta.
 

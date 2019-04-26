@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "js.system.collections", "js.system.collections.njsproj", "{568CD28C-59A9-4242-8369-8676D9824E54}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{568CD28C-59A9-4242-8369-8676D9824E54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{568CD28C-59A9-4242-8369-8676D9824E54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{568CD28C-59A9-4242-8369-8676D9824E54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{568CD28C-59A9-4242-8369-8676D9824E54}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B86874E0-56D3-4A6C-A6CA-1C99C42EF23D}
+	EndGlobalSection
+EndGlobal

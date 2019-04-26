@@ -26,8 +26,14 @@ const { Dictionary, List } = require('../index');
     myDict.add('three', 'This is three.');
     console.debug('Is the Dictionay empty?', myDict.isEmpty);
 
+    console.debug( myDict.findIndexOfKey( 'three' ) );
     console.debug(myDict.getByKey('three'));
     console.debug(myDict.getAllValues());
+
+    console.debug( 'Remove the first and last elements from the Collection.' );
+    myDict.removeFirst();
+    myDict.removeLast();
+    console.debug( myDict.getAllValues() );
 
     console.debug('Give an error now. \nAdd an item with an exixting key:');
     // UNCOMMENT FOR ERROR.
@@ -50,6 +56,11 @@ const { Dictionary, List } = require('../index');
     myList.add( 26.8888 );
 
     console.debug( 'Is the List empty?', myList.isEmpty );
+    console.debug( myList.getAll() );
+
+    console.debug( 'Remove the first and last elements from the Collection.' );
+    myList.removeFirst();
+    myList.removeLast();
     console.debug( myList.getAll() );
 
     console.debug( 'Give an error now. \nAdd an integer:' );
