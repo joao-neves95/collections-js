@@ -7,22 +7,24 @@
 	},
 	"uglify": false,
 	"autoBuild": false,
-	"notifications": false,
+	"notifications": true,
+	"updateOnLaunch": true,
+	"lastUpdateCheck": "2019-04-26T10:17:07.000Z",
+	"nodeModulesPath": "",
 	"sourceFiles": [
 		{
-			"source": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\js.system.collections.header.js",
+			"source": "C:\\Users\\jpedrone\\DEV\\js.system.collections\\js.system.collections.header.js",
 			"output": {
-				"path": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\dist",
+				"path": "C:\\Users\\jpedrone\\DEV\\js.system.collections\\dist",
 				"name": "js.system.collections.js"
 			}
 		},
 		{
-			"source": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\js.system.collections.min.header.js",
+			"source": "C:\\Users\\jpedrone\\DEV\\js.system.collections\\js.system.collections.min.header.js",
 			"output": {
-				"path": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\dist",
+				"path": "C:\\Users\\jpedrone\\DEV\\js.system.collections\\dist",
 				"name": "js.system.collections.min.js"
 			}
 		}
-	],
-	"updateOnLaunch": true
+	]
 }

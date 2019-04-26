@@ -31,7 +31,6 @@
     <Content Include="lib\dictionary.js" />
     <Content Include="lib\errors.js" />
     <Content Include="lib\list.js" />
-    <Content Include="test\index.html" />
     <Content Include="test\tempNodeJSTest.js" />
   </ItemGroup>
   <ItemGroup>

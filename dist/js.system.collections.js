@@ -109,6 +109,14 @@ class Collection {
     this.elements = [];
   }
 
+  removeFirst() {
+    this.____splice( 0 );
+  }
+
+  removeLast() {
+    this.____splice( this.length - 1 );
+  }
+
   /**
    * (private) 
    */
@@ -123,7 +131,7 @@ class Collection {
    * No type safety. For private class use.
    * @param {Type} value
    */
-  push( value ) {
+  ____push( value ) {
     this.elements.push( value );
   }
 
@@ -132,7 +140,7 @@ class Collection {
     * No checks. For private class use.
     * @param {Number} index
     */
-  splice( index ) {
+  ____splice( index ) {
     this.elements.splice( index, 1 );
   }
 }
@@ -207,7 +215,7 @@ class Dictionary extends ____collection1 {
         throw new Error( ____errors1.existingKey );
     }
 
-    this.push( { [key]: value } );
+    this.____push( { [key]: value } );
   }
 
   /*
@@ -219,7 +227,7 @@ class Dictionary extends ____collection1 {
     if ( index === false )
       return false;
 
-    this.splice( index, 1 );
+    this.____splice( index, 1 );
     return true;
   }
 
@@ -236,13 +244,13 @@ class Dictionary extends ____collection1 {
 
     return this.updateByIndex( index, newValue );
   }
+
   /*
    * Updates an item in the Dictionary with the provided index.
    * @param { any } key
    * @param { any } newValue
    * @return { bool }
    */
-
   updateByIndex( idx, newValue ) {
     try {
       Object.defineProperty( this.elements[idx], key, {
@@ -275,28 +283,55 @@ class Dictionary extends ____collection1 {
   }
 
   /**
-   * Returns the value by key or <false> if not found.
+   * Returns the value by key or false if not found.
    * @param { any } key
    * @returns { any | false }
    */
   getByKey( key ) {
     try {
-      const keyIdx = this.findIndexOfKey( key );
-
-      if ( keyIdx === false )
+      const elementAndIndex = this.____getElementAndIndexByKey( key );
+      if ( elementAndIndex === false )
         return false;
 
-      return this.elements[keyIdx][key];
+      return Object.values( elementAndIndex[1] )[0];
 
     } catch ( e ) {
       console.error( e );
     }
   }
 
+  /**
+   * Returns the index of the provided key, or false if not found.
+   * 
+   * @param {any} key
+   * 
+   * @returns { number | false }
+   */
   findIndexOfKey( key ) {
+    const elementAndIndex = this.____getElementAndIndexByKey( key );
+    if ( elementAndIndex === false )
+      return false;
+
+    return elementAndIndex[0];
+  }
+
+  /**
+   * (private)
+   * Returns an array with the index and the respective key-value pair object, or false in case it does not find the provided key.
+   * 
+   * [index<number>, keyValuePair<object>]
+   * 
+   * @param { any } key
+   * @returns { Object | false }
+   */
+  ____getElementAndIndexByKey( key ) {
+    let currKeyValPair;
+
     for ( let i = 0; i < this.elements.length; i++ ) {
-      if ( Object.keys( this.elements[i] )[0] === key )
-        return i;
+      currKeyValPair = this.elements[i];
+
+      if ( Object.keys( currKeyValPair )[0] === key )
+        return [i, currKeyValPair];
     }
 
     return false;
@@ -369,26 +404,32 @@ class List extends ____collection2 {
    * @param {Type} value
    */
   add( value ) {
+    let doPush = false;
+
     switch ( this.type ) {
       case 'any':
-        return this.push( value );
+        doPush = true;
+        break;
       case 'int':
         if ( this.isInt( value ) ) {
-          return this.push( value );
+          doPush = true;
         }
         break;
       case 'float':
         if ( this.isFloat( value ) ) {
-          return this.push( value );
+          doPush = true;
         }
         break;
       default:
         if ( typeof value === this.type )
-          return this.push( value );
+          doPush = true;
         break;
     }
 
-    throw ____errors2.wrongType( this.type );
+    if ( doPush === false )
+      throw ____errors2.wrongType( this.type );
+
+    return this.____push( value );
   }
 
   /**
@@ -398,7 +439,6 @@ class List extends ____collection2 {
   remove( index ) {
     this.splice( index );
   }
-
 
   forEach( Callback ) {
     this.__forEach( ( item ) => {
