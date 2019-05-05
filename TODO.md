@@ -8,6 +8,8 @@
   - \<Dictionary\> getAllKeys().
   - \<Dictionary\> containsKey(key).
   - \<List>\ containsValue(value).
+  - \<List>\ get(index)
+  - \<List>\ update(index).
   
 - Add type safety to the dictionary's keys and values.
 
