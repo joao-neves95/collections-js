@@ -38,7 +38,7 @@ const myList = new List();
 or
 
 ```
-<script src="">https://cdn.jsdelivr.net/gh/joao-neves95/js.system.collections/dist/js.system.collections.min.js</script>
+<script src="https://cdn.jsdelivr.net/gh/joao-neves95/js.system.collections/dist/js.system.collections.min.js"></script>
 ```
 
 or
