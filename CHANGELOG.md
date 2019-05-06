@@ -4,7 +4,17 @@
 &nbsp;
 
 
-#### *v1.1.0 - 26/04/2019
+#### *v1.2.0 - 6/05/2019
+
+  - Added the update(index, value) method to the List.
+  - Added the contains(value) method to the List.
+  - Multiple refactorings.
+
+
+&nbsp;
+
+
+#### v1.1.0 - 26/04/2019
 
   - Fixed the Dictionary getByKey and findIndexOfKey methods according to the new benchmarks. Big performance improvement;
   - Added the removeFirst() and removeLast() methods to the Collection class (common methods).

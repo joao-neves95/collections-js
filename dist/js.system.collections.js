@@ -95,7 +95,9 @@ class Collection {
   }
 
   /**
-   *
+   * Get an item from the Collection by index.
+   * In of beeing a Dictionary it will retun an object containing the key and value ( { key: value } )
+   * 
    * @param { number } index
    */
   get( index ) {
@@ -115,6 +117,25 @@ class Collection {
 
   removeLast() {
     this.____splice( this.length - 1 );
+  }
+
+  /**
+   * (private)
+   * @param {any} value
+   */
+  __isCorrectType( value ) {
+    switch ( this.type ) {
+      case 'any':
+        return true;
+      case 'int':
+        return this.__isInt( value );
+      case 'float':
+        return this.__isFloat( value );
+        // Used for primitive types.
+        // 'string' | 'number' | 'boolean'
+      default:
+        return typeof value === this.type;
+    }
   }
 
   /**
@@ -142,6 +163,28 @@ class Collection {
     */
   ____splice( index ) {
     this.elements.splice( index, 1 );
+  }
+
+  /**
+ * (private)
+ * @param {Number} value
+ */
+  __isInt( value ) {
+    if ( typeof value !== 'number' )
+      return false;
+
+    return value % 1 === 0;
+  }
+
+  /**
+   * (private)
+   * @param {Number} value
+   */
+  __isFloat( value ) {
+    if ( typeof value !== 'number' )
+      return false;
+
+    return value % 1 !== 0;
   }
 }
 
@@ -284,6 +327,7 @@ class Dictionary extends ____collection1 {
 
   /**
    * Returns the value by key or false if not found.
+   * 
    * @param { any } key
    * @returns { any | false }
    */
@@ -372,7 +416,10 @@ try {
   ____collection2 = Collection;
 }
 
-
+/**
+ * @typedef { List }
+ * @extends Collection
+ * */
 class List extends ____collection2 {
   /**
    * 
@@ -401,35 +448,33 @@ class List extends ____collection2 {
 
   /**
    * Add a new item to the List<T>.
-   * @param {Type} value
+   * @param { any } value
    */
   add( value ) {
-    let doPush = false;
+    const canPush = this.__isCorrectType( value );
 
-    switch ( this.type ) {
-      case 'any':
-        doPush = true;
-        break;
-      case 'int':
-        if ( this.isInt( value ) ) {
-          doPush = true;
-        }
-        break;
-      case 'float':
-        if ( this.isFloat( value ) ) {
-          doPush = true;
-        }
-        break;
-      default:
-        if ( typeof value === this.type )
-          doPush = true;
-        break;
-    }
-
-    if ( doPush === false )
+    if ( canPush === false )
       throw ____errors2.wrongType( this.type );
 
     return this.____push( value );
+  }
+
+  update( index, value ) {
+    const canPush = this.__isCorrectType( value );
+
+    if ( canPush === false )
+      throw ____errors2.wrongType( this.type );
+
+    this.elements[index] = value;
+  }
+
+  /**
+   * Returns true if the List contains the value, or false if it does not.
+   * 
+   * @param {any} value
+   */
+  contains( value ) {
+    return this.elements.includes( value );
   }
 
   /**
@@ -444,28 +489,6 @@ class List extends ____collection2 {
     this.__forEach( ( item ) => {
       Callback( item );
     } );
-  }
-
-  /**
-   * (private)
-   * @param {Number} value
-   */
-  isInt( value ) {
-    if ( typeof value !== 'number' )
-      return false;
-
-    return value % 1 === 0;
-  }
-
-  /**
-   * (private)
-   * @param {Number} value
-   */
-  isFloat( value ) {
-    if ( typeof value !== 'number' )
-      return false;
-
-    return value % 1 !== 0;
   }
 }
 

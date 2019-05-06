@@ -13,68 +13,109 @@ try {
 }
 
 const runTest = () => {
-    // ------------------------------------------------------------------------ //
+  // ------------------------------------------------------------------------ //
 
-    // DICTIONARY
-    console.log('// ------------------------------------------------------------------------ //');
-    console.log('DICTIONARY');
+  // DICTIONARY
+  console.log( '// ------------------------------------------------------------------------ //' );
+  console.log( 'DICTIONARY' );
 
-    console.debug('Create a Dictionary with unique keys.');
-    const myDict = new _Dictionary(true);
+  console.debug( 'Create a Dictionary with unique keys.' );
+  const myDict = new _Dictionary( true );
 
-    console.debug('Is the Dictionay empty?', myDict.isEmpty);
+  console.debug( 'Is the Dictionay empty?', myDict.isEmpty );
 
-    console.debug('Add some items to the neww Dictionary.');
-    myDict.add('one', 'This is one.');
-    myDict.add('two', 'This is two.');
-    myDict.add('three', 'This is three.');
-    console.debug('Is the Dictionay empty?', myDict.isEmpty);
+  console.debug( 'Add some items to the neww Dictionary.' );
+  myDict.add( 'one', 'This is one.' );
+  myDict.add( 'two', 'This is two.' );
+  myDict.add( 'three', 'This is three.' );
+  console.debug( 'Is the Dictionay empty?', myDict.isEmpty );
 
-    console.debug(myDict.findIndexOfKey('three'));
-    console.debug(myDict.getByKey('three'));
-    console.debug(myDict.getAllValues());
+  console.debug( myDict.findIndexOfKey( 'three' ) );
+  console.debug( myDict.getByKey( 'three' ) );
+  console.debug( myDict.getAllValues() );
 
-    console.debug('Remove the first and last elements from the Collection.');
-    myDict.removeFirst();
-    myDict.removeLast();
-    console.debug(myDict.getAllValues());
+  console.debug( 'Update the second element by index' );
+  myDict.updateByIndex( 1, "This is two v2." );
+  console.debug( 'Get the second element by index' );
+  console.debug( myDict.getByIndex( 1 ) );
 
-    console.debug('Give an error now. \nAdd an item with an exixting key:');
-    // UNCOMMENT FOR ERROR.
-    // myDict.add('two', 'This is two AGAIN.');
+  console.debug( 'Update the second element by key' );
+  myDict.updateByKey( "two", "This is two v3." );
+  console.debug( 'Get the second element by key' );
+  console.debug( myDict.getByKey( "Two" ) );
 
-    // ------------------------------------------------------------------------ //
 
-    // LIST
-    console.log('// ------------------------------------------------------------------------ //');
-    console.log('LIST');
+  console.debug( 'Remove the first and last elements from the Collection.' );
+  myDict.removeFirst();
+  myDict.removeLast();
+  console.debug( myDict.getAllValues() );
 
-    console.debug('Create a List of floats.');
-    const myList = new _List('float');
+  console.debug( 'Give an error now. \nAdd an item with an existing key:' );
+  // UNCOMMENT FOR ERROR.
+  // myDict.add('two', 'This is two AGAIN.');
 
-    console.debug('Is the List empty?', myList.isEmpty);
+  // ------------------------------------------------------------------------ //
 
-    console.debug('Add some floats to the List.');
-    myList.add(1.5);
-    myList.add(34.98);
-    myList.add(26.8888);
+  // LIST
+  console.log( '// ------------------------------------------------------------------------ //' );
+  console.log( 'LIST' );
 
-    console.debug('Is the List empty?', myList.isEmpty);
-    console.debug(myList.getAll());
+  console.debug( 'Create a List of floats.' );
+  const myList = new _List( 'float' );
 
-    console.debug('Remove the first and last elements from the Collection.');
-    myList.removeFirst();
-    myList.removeLast();
-    console.debug(myList.getAll());
+  console.debug( 'Is the List empty?', myList.isEmpty );
 
-    console.debug('Give an error now. \nAdd an integer:');
-    // UNCOMMENT FOR ERROR.
-    // myList.add( 69 );
+  console.debug( 'Add some floats to the List.' );
+  myList.add( 1.5 );
+  myList.add( 34.98 );
+  myList.add( 26.8888 );
 
-    console.log('// ------------------------------------------------------------------------ //');
+  console.debug( 'Return true because it contains 26.8888', myList.contains( 26.8888 ) );
+  console.debug( 'Return false because it does not contain 99.3', myList.contains( 99.3 ) );
 
-    // ------------------------------------------------------------------------ //
-}
+  console.debug( 'Is the List empty?', myList.isEmpty );
+  console.debug( myList.getAll() );
+
+  console.debug( 'Get the second element of List by index.' );
+  console.debug( myList.get(2) );
+
+  console.debug( 'Update the second element of the List by index with the correct type.' );
+  myList.update( 2, 34.9999 );
+  console.debug( myList.get(2) );
+  console.debug( 'Update the second element of the List by index with the wrong type. \nThrow error. \n(uncoment next line).' );
+  // Uncomment to throw error.
+  // myList.update( 2, 79 );
+
+  console.debug( 'Remove the first and last elements from the Collection.' );
+  myList.removeFirst();
+  myList.removeLast();
+  console.debug( myList.getAll() );
+
+  console.debug( 'Give an error now. \nAdd an integer: \n (uncomment next line)' );
+  // UNCOMMENT FOR ERROR.
+  // myList.add( 69 );
+
+  console.log( '// ------------------------------------------------------------------------ //' );
+
+  console.log( 'LIST' );
+
+  console.debug( 'Create a List of boleans (test type safety of a primitive types).' );
+  const myBooleanList = new _List( 'boolean' );
+
+  console.debug( 'Add some boleans to the List.' );
+  myBooleanList.add( true );
+  myBooleanList.add( false );
+  myBooleanList.add( true );
+  console.debug( myBooleanList.getAll() );
+
+  console.debug( 'Give an error now. \nAdd a **string** boolean: \n(uncomment the next line)' );
+  // UNCOMMENT FOR ERROR.
+  // myBooleanList.add( 'true' );
+
+  console.log( '// ------------------------------------------------------------------------ //' );
+
+  // ------------------------------------------------------------------------ //
+};
 
 try {
     if ( process.env !== undefined )
