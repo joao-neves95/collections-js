@@ -241,6 +241,11 @@ class Dictionary extends ____collection1 {
     }
   }
 
+  /**
+   * Returns an array with all the dictionary's values.
+   *
+   * @returns { any[] }
+   */
   getAllValues() {
     let allValues = [];
 
@@ -251,6 +256,20 @@ class Dictionary extends ____collection1 {
     return allValues;
   }
 
+  /**
+   * Returns an array with all the dictionary's keys.
+   *
+   * @returns { any[] }
+   */
+  getAllKeys() {
+    const allKeys = [];
+
+    for ( let i = 0; i < this.elements.length; ++i ) {
+      allKeys.push( Object.keys( this.elements[i] )[0] );
+    }
+
+    return allKeys;
+  }
 
   add( key, value ) {
     if ( this.uniqueKeys ) {
@@ -327,7 +346,7 @@ class Dictionary extends ____collection1 {
 
   /**
    * Returns the value by key or false if not found.
-   * 
+   *
    * @param { any } key
    * @returns { any | false }
    */
@@ -346,9 +365,9 @@ class Dictionary extends ____collection1 {
 
   /**
    * Returns the index of the provided key, or false if not found.
-   * 
+   *
    * @param {any} key
-   * 
+   *
    * @returns { number | false }
    */
   findIndexOfKey( key ) {
@@ -362,9 +381,9 @@ class Dictionary extends ____collection1 {
   /**
    * (private)
    * Returns an array with the index and the respective key-value pair object, or false in case it does not find the provided key.
-   * 
+   *
    * [index<number>, keyValuePair<object>]
-   * 
+   *
    * @param { any } key
    * @returns { Object | false }
    */

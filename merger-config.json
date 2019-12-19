@@ -6,24 +6,26 @@
 		"changelog": "https://github.com/joao-neves95/merger-js/blob/master/CHANGELOG.md"
 	},
 	"uglify": false,
-	"autoBuild": false,
+	"autoBuild": true,
 	"notifications": true,
 	"updateOnLaunch": true,
-	"lastUpdateCheck": "2019-05-06T10:15:47.000Z",
-	"nodeModulesPath": "",
+	"lastUpdateCheck": "2019-12-19T00:28:01.000Z",
 	"sourceFiles": [
 		{
-			"source": "C:\\Users\\jpedrone\\DEV\\js.system.collections\\js.system.collections.header.js",
+			"source": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\js.system.collections.min.header.js",
 			"output": {
-				"path": "C:\\Users\\jpedrone\\DEV\\js.system.collections\\dist",
-				"name": "js.system.collections.js"
+				"path": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\dist",
+				"name": "js.system.collections.min.js"
+			},
+			"config": {
+				"uglify": true
 			}
 		},
 		{
-			"source": "C:\\Users\\jpedrone\\DEV\\js.system.collections\\js.system.collections.min.header.js",
+			"source": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\js.system.collections.header.js",
 			"output": {
-				"path": "C:\\Users\\jpedrone\\DEV\\js.system.collections\\dist",
-				"name": "js.system.collections.min.js"
+				"path": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\dist",
+				"name": "js.system.collections.js"
 			}
 		}
 	]
