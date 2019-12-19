@@ -65,6 +65,7 @@ or
 - Dictionary( uniqueKeys = false )
   - lastValue
   - getAllValues
+  - getAllKeys
   - add( key, value )
   - remove( key )
   - updateByKey( key, newValue )
