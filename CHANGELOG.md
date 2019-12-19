@@ -1,10 +1,17 @@
 # Changelog
 
+&nbsp;
+
+
+#### *v1.3.0 - 19/12/2019
+
+  - Added the getAllKeys() method.
+
 
 &nbsp;
 
 
-#### *v1.2.0 - 6/05/2019
+#### v1.2.0 - 6/05/2019
 
   - Added the update(index, value) method to the List.
   - Added the contains(value) method to the List.
