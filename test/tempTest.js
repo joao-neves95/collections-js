@@ -32,7 +32,8 @@ const runTest = () => {
 
   console.debug( myDict.findIndexOfKey( 'three' ) );
   console.debug( myDict.getByKey( 'three' ) );
-  console.debug( myDict.getAllValues() );
+  console.debug( 'All Keys:', myDict.getAllKeys() );
+  console.debug( 'All Values:', myDict.getAllValues() );
 
   console.debug( 'Update the second element by index' );
   myDict.updateByIndex( 1, "This is two v2." );
