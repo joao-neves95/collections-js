@@ -47,9 +47,7 @@ or
 <script src="https://raw.githubusercontent.com/joao-neves95/js.system.collections/master/dist/js.system.collections.min.js"></script>
 ```
 
-
 &nbsp;
-
 
 ## API
 
@@ -64,8 +62,8 @@ or
 
 - Dictionary( uniqueKeys = false )
   - lastValue
-  - getAllValues
-  - getAllKeys
+  - getAllValues()
+  - getAllKeys()
   - add( key, value )
   - remove( key )
   - updateByKey( key, newValue )
