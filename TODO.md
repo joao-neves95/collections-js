@@ -6,7 +6,8 @@
 
 - Add:
   - \<Dictionary\> containsKey(key).
+  - \<Dictionary\> removeByIndex.
+
+- Improve error handling.
   
 - Add type safety to the dictionary's keys and values.
-
-- Add more errors and ```throw``` them.
