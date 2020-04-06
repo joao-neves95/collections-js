@@ -161,8 +161,8 @@ class Collection {
     * No checks. For private class use.
     * @param {Number} index
     */
-  ____splice( index ) {
-    this.elements.splice( index, 1 );
+  ____splice( index, quantity = 1 ) {
+    this.elements.splice( index, quantity );
   }
 
   /**
@@ -271,17 +271,33 @@ class Dictionary extends ____collection1 {
     return allKeys;
   }
 
+  containsKey( key ) {
+    return this.findIndexOfKey( key ) !== false;;
+  }
+
   add( key, value ) {
     if ( this.uniqueKeys ) {
-      if ( this.findIndexOfKey( key ) !== false )
+      if ( this.containsKey( key ) ) {
         throw new Error( ____errors1.existingKey );
+      }
     }
 
     this.____push( { [key]: value } );
   }
 
-  /*
-   * Removes an item in the Dictionary with the provided key.
+  /**
+   * Removes an item from the Dictioary by index.
+   * @param { number } index
+   */
+  removeByIndex( index ) {
+    this.____splice( index );
+    return true;
+  }
+
+  /**
+   * Removes an item from the Dictionary with the provided key.
+   * @param { any } key
+   * 
    * @return { bool }
    */
   remove( key ) {
@@ -289,47 +305,57 @@ class Dictionary extends ____collection1 {
     if ( index === false )
       return false;
 
-    this.____splice( index, 1 );
+    this.____splice( index );
     return true;
   }
 
   /*
    * Updates an item in the Dictionary with the provided key.
+   * 
    * @param { any } key
    * @param { any } newValue
+   * 
    * @return { bool }
    */
   updateByKey( key, newValue ) {
     const index = this.findIndexOfKey( key );
-    if ( index === false )
+    if ( index === false ) {
       return false;
+    }
 
     return this.updateByIndex( index, newValue );
   }
 
-  /*
+  /**
    * Updates an item in the Dictionary with the provided index.
+   * 
    * @param { any } key
    * @param { any } newValue
-   * @return { bool }
+   * 
+   * @returns { bool }
    */
   updateByIndex( idx, newValue ) {
     try {
-      Object.defineProperty( this.elements[idx], key, {
+      const item = this.elements[idx];
+
+      Object.defineProperty( item, Object.keys(item)[0], {
         value: newValue
       } );
 
       return true;
 
     } catch ( e ) {
+
       return false;
     }
   }
 
   /**
    * Get a value with its index. Returns an array with the values.
+   * 
    * @param {number} index
-   * @return {any[]}
+   * 
+   * @returns {any[]}
    */
   getByIndex( index ) {
     return Object.values( this.elements[index] )[0];
@@ -337,8 +363,10 @@ class Dictionary extends ____collection1 {
 
   /**
    * Get a key with its index.
+   * 
    * @param {number} index
-   * @return {any}
+   * 
+   * @returns {any}
    */
   getKeyByIndex( index ) {
     return Object.keys( this.elements[index] )[0];
@@ -348,13 +376,15 @@ class Dictionary extends ____collection1 {
    * Returns the value by key or false if not found.
    *
    * @param { any } key
+   * 
    * @returns { any | false }
    */
   getByKey( key ) {
     try {
       const elementAndIndex = this.____getElementAndIndexByKey( key );
-      if ( elementAndIndex === false )
+      if ( elementAndIndex === false ) {
         return false;
+      }
 
       return Object.values( elementAndIndex[1] )[0];
 
@@ -372,8 +402,9 @@ class Dictionary extends ____collection1 {
    */
   findIndexOfKey( key ) {
     const elementAndIndex = this.____getElementAndIndexByKey( key );
-    if ( elementAndIndex === false )
+    if ( elementAndIndex === false ) {
       return false;
+    }
 
     return elementAndIndex[0];
   }
@@ -385,6 +416,7 @@ class Dictionary extends ____collection1 {
    * [index<number>, keyValuePair<object>]
    *
    * @param { any } key
+   * 
    * @returns { Object | false }
    */
   ____getElementAndIndexByKey( key ) {
@@ -393,8 +425,9 @@ class Dictionary extends ____collection1 {
     for ( let i = 0; i < this.elements.length; i++ ) {
       currKeyValPair = this.elements[i];
 
-      if ( Object.keys( currKeyValPair )[0] === key )
+      if ( Object.keys( currKeyValPair )[0] === key ) {
         return [i, currKeyValPair];
+      }
     }
 
     return false;
