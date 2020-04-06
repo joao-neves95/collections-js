@@ -81,11 +81,11 @@ const runTest = () => {
   console.debug( myList.getAll() );
 
   console.debug( 'Get the second element of List by index.' );
-  console.debug( myList.get(2) );
+  console.debug( myList.get(1) );
 
   console.debug( 'Update the second element of the List by index with the correct type.' );
-  myList.update( 2, 34.9999 );
-  console.debug( myList.get(2) );
+  myList.update( 1, 9.999 );
+  console.debug( myList.get(1) );
   console.debug( 'Update the second element of the List by index with the wrong type. \nThrow error. \n(uncoment next line).' );
   // Uncomment to throw error.
   // myList.update( 2, 79 );
