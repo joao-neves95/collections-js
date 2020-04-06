@@ -35,20 +35,23 @@ const runTest = () => {
   console.debug( 'All Keys:', myDict.getAllKeys() );
   console.debug( 'All Values:', myDict.getAllValues() );
 
-  console.debug( 'Update the second element by index' );
+  console.debug( 'Update the second element by index:' );
   myDict.updateByIndex( 1, "This is two v2." );
-  console.debug( 'Get the second element by index' );
-  console.debug( myDict.getByIndex( 1 ) );
+  console.debug( 'Get the second element by index:' );
+  console.debug( 'Dictionary[1] =', myDict.getByIndex( 1 ) );
 
   console.debug( 'Update the second element by key' );
   myDict.updateByKey( "two", "This is two v3." );
   console.debug( 'Get the second element by key' );
-  console.debug( myDict.getByKey( "Two" ) );
-
+  console.debug( myDict.getByKey( "two" ) );
 
   console.debug( 'Remove the first and last elements from the Collection.' );
   myDict.removeFirst();
   myDict.removeLast();
+  console.debug( myDict.getAllValues() );
+
+  console.debug( 'Remove the element from the Collection by index (0).' );
+  myDict.removeByIndex( 0 );
   console.debug( myDict.getAllValues() );
 
   console.debug( 'Give an error now. \nAdd an item with an existing key:' );
@@ -78,11 +81,11 @@ const runTest = () => {
   console.debug( myList.getAll() );
 
   console.debug( 'Get the second element of List by index.' );
-  console.debug( myList.get(2) );
+  console.debug( myList.get(1) );
 
   console.debug( 'Update the second element of the List by index with the correct type.' );
-  myList.update( 2, 34.9999 );
-  console.debug( myList.get(2) );
+  myList.update( 1, 9.999 );
+  console.debug( myList.get(1) );
   console.debug( 'Update the second element of the List by index with the wrong type. \nThrow error. \n(uncoment next line).' );
   // Uncomment to throw error.
   // myList.update( 2, 79 );

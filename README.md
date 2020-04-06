@@ -64,7 +64,9 @@ or
   - lastValue
   - getAllValues()
   - getAllKeys()
+  - containsKey( key )
   - add( key, value )
+  - removeByIndex( index )
   - remove( key )
   - updateByKey( key, newValue )
   - updateByIndex( idx, newValue )
