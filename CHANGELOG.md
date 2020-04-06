@@ -3,7 +3,18 @@
 &nbsp;
 
 
-#### *v1.3.0 - 19/12/2019
+#### *v1.4.0 - 06/04/2020
+
+  - Fix on the the method "updateByIndex" of the Dictionary.
+  - Added the method "removeByIndex( index )" to the Dictionary.
+  - Added the method "containsKey( key )" to the Dictionary.
+  - Small internal refactorings and fixes.
+
+
+&nbsp;
+
+
+#### v1.3.0 - 19/12/2019
 
   - Added the getAllKeys() method.
 
