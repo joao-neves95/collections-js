@@ -3,6 +3,9 @@
   "description": "Vanilla JavaScript ES collections inspired by .NET for Node.js and the browser.",
   "version": "1.4.0",
   "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
   "author": {
     "name": "shivayl (João Neves)",
     "url": "https://shivayl.com"
@@ -27,5 +30,9 @@
     "collections",
     "dictionary",
     "list"
-  ]
+  ],
+  "devDependencies": {
+    "amd-loader": "0.0.8",
+    "jasmine": "^3.5.0"
+  }
 }
