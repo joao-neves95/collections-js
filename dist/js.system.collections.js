@@ -27,7 +27,7 @@
 
   } else if ( typeof exports === 'object' && typeof exports.nodeName !== 'string' ) {
     // CommonJS.
-    module.exports = factory( exports );
+    module.exports.Errors = factory( exports );
 
   } else {
     // Browser.
@@ -43,7 +43,6 @@
     static wrongType( type ) { throw new Error( `The value is not from the same type as the List<${type}>` ); };
   }
 
-  exports.action = Errors;
   return Errors;
 });
 
@@ -56,7 +55,6 @@
  *
  */
 
-// TODO: Refactor every class to not repeat this header.
 (function (root, factory) {
   if ( typeof define === 'function' && define.amd ) {
     // AMD.
@@ -64,7 +62,7 @@
 
   } else if ( typeof exports === 'object' && typeof exports.nodeName !== 'string' ) {
     // CommonJS.
-    module.exports = factory( exports, require( './errors' ) );
+    module.exports.Collection = factory( exports, require( './js.system.collections' ).Errors );
 
   } else {
     // Browser.
@@ -200,7 +198,6 @@
     }
   }
 
-  exports.action = Collection;
   return Collection;
 } );
 
@@ -220,7 +217,7 @@
 
   } else if ( typeof exports === 'object' && typeof exports.nodeName !== 'string' ) {
     // CommonJS.
-    module.exports = factory( exports, require( './collection' ) );
+    module.exports.Dictionary = factory( exports, require( './js.system.collections' ).Collection );
 
   } else {
     // Browser.
@@ -365,12 +362,18 @@
     /**
      * Get a value with its index. Returns an array with the values.
      * 
-     * @param {number} index
+     * @param { number } index
      * 
-     * @returns {any[]}
+     * @returns { any | false }
      */
     getByIndex( index ) {
-      return Object.values( this.elements[index] )[0];
+      const element = this.elements[index];
+
+      if ( element === undefined || element === null ) {
+        return false;
+      }
+
+      return Object.values( element )[0];
     }
 
     /**
@@ -452,7 +455,6 @@
     }
   }
 
-  exports.action = Dictionary;
   return Dictionary;
 });
 
@@ -472,7 +474,7 @@
 
   } else if ( typeof exports === 'object' && typeof exports.nodeName !== 'string' ) {
     // CommonJS.
-    module.exports = factory( exports, require( './collection' ) );
+    module.exports.List = factory( exports, require( './js.system.collections' ).Collection );
 
   } else {
     // Browser.
@@ -556,7 +558,6 @@
     }
   }
 
-  exports.action = List;
   return List;
 });
 
