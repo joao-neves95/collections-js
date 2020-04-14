@@ -27,7 +27,7 @@
 
   } else if ( typeof module === 'object' && module.exports ) {
     // CommonJS.
-    module.exports = factory();
+    module.exports['Errors'] = factory();
 
   } else {
     // Browser.
@@ -61,7 +61,7 @@
 
   } else if ( typeof module === 'object' && module.exports ) {
     // CommonJS.
-    module.exports = factory( require( './errors' ) );
+    module.exports['Collection'] = factory( require( './js.system.collections' )['Errors'] );
 
   } else {
     // Browser.
@@ -215,7 +215,8 @@
 
   } else if ( typeof module === 'object' && module.exports ) {
     // CommonJS (Node.js).
-    module.exports = factory( require( './collection' ), require( './errors' ) );
+    const lib = require( './js.system.collections' );
+    module.exports['Dictionary'] = factory( lib['Collection'], lib['Errors'] );
 
   } else {
     // Browser.
@@ -478,7 +479,7 @@
 
   } else if ( typeof module === 'object' && module.exports ) {
     // CommonJS.
-    module.exports = factory( require( './collection' ) );
+    module.exports['List'] = factory( require( './js.system.collections' )['Collection'] );
 
   } else {
     // Browser.
