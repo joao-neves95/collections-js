@@ -1,5 +1,5 @@
-// const { Dictionary } = require( '../../index.js' );
-const { Dictionary } = require( '../../dist/js.system.collections.js' );
+// const { Dictionary } = require( '../../dist/js.system.collections.js' );
+const { Dictionary } = require( '../../index.js' );
 
 describe( 'The Dictionary', function() {
 
@@ -31,13 +31,13 @@ describe( 'The Dictionary', function() {
     expect( itemFourByIndex ).toBeDefined();
     expect( itemFourByIndex ).toBe( itemFourValue );
 
-    const allKeys = global.myDict.getAllKeys(); 
+    const allKeys = global.myDict.getAllKeys();
     expect( allKeys[2] ).toBe( 'three' );
     expect( allKeys.length ).toBe( 4 );
   });
 
   it( 'should update item values', function() {
-    const newTwoValue = 'This is two v2.'; 
+    const newTwoValue = 'This is two v2.';
     global.myDict.updateByIndex( 1, newTwoValue );
     expect( global.myDict.getByIndex( 1 ) ).toBe( newTwoValue );
 
@@ -56,7 +56,7 @@ describe( 'The Dictionary', function() {
     global.myDict.removeByIndex( 0 );
     expect( global.myDict.getAllValues().length ).toBe( 1 );
   });
-  
+
   it( 'should NOT add items with an existing key', function() {
     let error = false;
 
