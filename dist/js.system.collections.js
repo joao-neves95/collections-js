@@ -23,17 +23,17 @@
 (function (root, factory) {
   if ( typeof define === 'function' && define.amd ) {
     // AMD.
-    define( 'errors', ['exports'], factory );
+    define( 'errors', [], factory );
 
-  } else if ( typeof exports === 'object' && typeof exports.nodeName !== 'string' ) {
+  } else if ( typeof module === 'object' && module.exports ) {
     // CommonJS.
-    module.exports.Errors = factory( exports );
+    module.exports = factory();
 
   } else {
     // Browser.
-    root.Errors = factory( root );
+    root.Errors = factory();
   }
-})( typeof global !== 'undefined' ? global : this.window || this.global, function( exports ) { 
+})( typeof global !== 'undefined' ? global : this.window || this.global, function() {
 
   class Errors {
     static get existingKey() { throw new Error( 'An item with the same key has already been added.' ); };
@@ -46,7 +46,6 @@
   return Errors;
 });
 
-
 /*
  * Copyright (c) 2019 João Pedro Martins Neves - All Rights Reserved.
  *
@@ -58,18 +57,18 @@
 (function (root, factory) {
   if ( typeof define === 'function' && define.amd ) {
     // AMD.
-    define( 'collection', ['exports', 'errors'], factory );
+    define( 'collection', ['errors'], factory );
 
-  } else if ( typeof exports === 'object' && typeof exports.nodeName !== 'string' ) {
+  } else if ( typeof module === 'object' && module.exports ) {
     // CommonJS.
-    module.exports.Collection = factory( exports, require( './js.system.collections' ).Errors );
+    module.exports = factory( require( './errors' ) );
 
   } else {
     // Browser.
-    root.Collection = factory( root, root.Errors );
+    root.Collection = factory( root.Errors );
   }
-})( typeof global !== 'undefined' ? global : this.window || this.global, function( exports, Errors ) { 
-  
+})( typeof global !== 'undefined' ? global : this.window || this.global, function( Errors ) {
+
   class Collection {
     constructor( uniqueKeys = false, type = 'any' ) {
       this.elements = [];
@@ -97,7 +96,7 @@
     /**
      * Get all elements from the Collection.
      * For Dictionary is best to use .getAllValues()
-     * 
+     *
      * Returns elements[]
      */
     getAll() {
@@ -107,11 +106,11 @@
     /**
      * Get an item from the Collection by index.
      * In of beeing a Dictionary it will retun an object containing the key and value ( { key: value } )
-     * 
-     * @param { number } index
+     *
+     * @param { number | false } index
      */
     get( index ) {
-      return this.elements[index];
+      return this.elements[index] | false;
     }
 
     /**
@@ -149,7 +148,7 @@
     }
 
     /**
-     * (private) 
+     * (private)
      */
     __forEach( Callback ) {
       for ( let i = 0; i < this.elements.length; ++i ) {
@@ -201,7 +200,6 @@
   return Collection;
 } );
 
-
 /*
  * Copyright (c) 2019 João Pedro Martins Neves - All Rights Reserved.
  *
@@ -213,21 +211,22 @@
 (function (root, factory) {
   if ( typeof define === 'function' && define.amd ) {
     // AMD.
-    define( 'dictionary', ['exports', 'collection' ], factory );
+    define( 'dictionary', ['collection', 'errors'], factory );
 
-  } else if ( typeof exports === 'object' && typeof exports.nodeName !== 'string' ) {
-    // CommonJS.
-    module.exports.Dictionary = factory( exports, require( './js.system.collections' ).Collection );
+  } else if ( typeof module === 'object' && module.exports ) {
+    // CommonJS (Node.js).
+    module.exports = factory( require( './collection' ), require( './errors' ) );
 
   } else {
     // Browser.
-    root.Dictionary = factory( root, root.Collection );
+    root.Dictionary = factory( root.Collection, root.Errors );
   }
-})( typeof global !== 'undefined' ? global : this.window || this.global, function( exports, Collection ) { 
+})( typeof global !== 'undefined' ? global : this.window || this.global, function( Collection, Errors ) {
 
   class Dictionary extends Collection {
     /**
      * Dictionary of key-value pairs.
+     *
      * @param {Boolean} uniqueKeys Whether the keys should be unique or not.
      * Optional. It defaults to false
      * @default {false}
@@ -258,9 +257,9 @@
     getAllValues() {
       let allValues = [];
 
-      for ( let i = 0; i < this.elements.length; ++i ) {
-        allValues.push( Object.values( this.elements[i] )[0] );
-      }
+      this.forEachValue( ( value ) => {
+        allValues.push( value );
+      } );
 
       return allValues;
     }
@@ -273,9 +272,9 @@
     getAllKeys() {
       const allKeys = [];
 
-      for ( let i = 0; i < this.elements.length; ++i ) {
-        allKeys.push( Object.keys( this.elements[i] )[0] );
-      }
+      this.__forEach( (item) => {
+        allKeys.push( Object.keys( item )[0] );
+      } )
 
       return allKeys;
     }
@@ -287,7 +286,7 @@
     add( key, value ) {
       if ( this.uniqueKeys ) {
         if ( this.containsKey( key ) ) {
-          throw new Error( ____errors1.existingKey );
+          throw new Error( Errors.existingKey );
         }
       }
 
@@ -306,7 +305,7 @@
     /**
      * Removes an item from the Dictionary with the provided key.
      * @param { any } key
-     * 
+     *
      * @return { bool }
      */
     remove( key ) {
@@ -320,10 +319,10 @@
 
     /*
      * Updates an item in the Dictionary with the provided key.
-     * 
+     *
      * @param { any } key
      * @param { any } newValue
-     * 
+     *
      * @return { bool }
      */
     updateByKey( key, newValue ) {
@@ -337,17 +336,17 @@
 
     /**
      * Updates an item in the Dictionary with the provided index.
-     * 
+     *
      * @param { any } key
      * @param { any } newValue
-     * 
+     *
      * @returns { bool }
      */
     updateByIndex( idx, newValue ) {
       try {
         const item = this.elements[idx];
 
-        Object.defineProperty( item, Object.keys(item)[0], {
+        Object.defineProperty( item, Object.keys( item )[0], {
           value: newValue
         } );
 
@@ -361,9 +360,9 @@
 
     /**
      * Get a value with its index. Returns an array with the values.
-     * 
+     *
      * @param { number } index
-     * 
+     *
      * @returns { any | false }
      */
     getByIndex( index ) {
@@ -378,20 +377,26 @@
 
     /**
      * Get a key with its index.
-     * 
-     * @param {number} index
-     * 
-     * @returns {any}
+     *
+     * @param { number } index
+     *
+     * @returns { any | false }
      */
     getKeyByIndex( index ) {
-      return Object.keys( this.elements[index] )[0];
+      const item = this.elements[index];
+
+      if ( item === undefined || item === null ) {
+        return false;
+      }
+
+      return Object.keys( item )[0];
     }
 
     /**
      * Returns the value by key or false if not found.
      *
      * @param { any } key
-     * 
+     *
      * @returns { any | false }
      */
     getByKey( key ) {
@@ -431,7 +436,7 @@
      * [index<number>, keyValuePair<object>]
      *
      * @param { any } key
-     * 
+     *
      * @returns { Object | false }
      */
     ____getElementAndIndexByKey( key ) {
@@ -458,7 +463,6 @@
   return Dictionary;
 });
 
-
 /*
  * Copyright (c) 2019 João Pedro Martins Neves - All Rights Reserved.
  *
@@ -470,17 +474,17 @@
 (function (root, factory) {
   if ( typeof define === 'function' && define.amd ) {
     // AMD.
-    define( 'list', ['exports', 'collection'], factory );
+    define( 'list', ['collection'], factory );
 
-  } else if ( typeof exports === 'object' && typeof exports.nodeName !== 'string' ) {
+  } else if ( typeof module === 'object' && module.exports ) {
     // CommonJS.
-    module.exports.List = factory( exports, require( './js.system.collections' ).Collection );
+    module.exports = factory( require( './collection' ) );
 
   } else {
     // Browser.
-    root.List = factory( root, root.Collection );
+    root.List = factory( root.Collection );
   }
-})( typeof global !== 'undefined' ? global : this.window || this.global, function( exports, Collection ) { 
+})( typeof global !== 'undefined' ? global : this.window || this.global, function( Collection ) {
 
   /**
    * @typedef { List }
@@ -488,7 +492,7 @@
    * */
   class List extends Collection {
     /**
-     * 
+     *
      * The Type of the list.
      * @param {String} type
      * ('string' | 'number' | 'int' | 'float' | 'boolean' | 'any')
@@ -536,7 +540,7 @@
 
     /**
      * Returns true if the List contains the value, or false if it does not.
-     * 
+     *
      * @param {any} value
      */
     contains( value ) {
@@ -560,5 +564,4 @@
 
   return List;
 });
-
 
