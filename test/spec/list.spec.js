@@ -29,8 +29,6 @@ describe( 'The List', function() {
 
     expect( global.myList.length ).toBe( 4 );
 
-    console.log(global.myList.getAll())
-    console.log(global.myList.get( 1 ))
     expect( global.myList.get( 1 ) ).toBe( 34.98 );
     expect( global.myList.get( 23 ) ).toBeFalse();
   } );

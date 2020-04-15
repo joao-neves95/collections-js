@@ -1,5 +1,5 @@
-// const { Dictionary } = require( '../../dist/js.system.collections.js' );
-const { Dictionary } = require( '../../index.js' );
+const { Dictionary } = require( '../../dist/js.system.collections.js' );
+// const { Dictionary } = require( '../../index.js' );
 
 describe( 'The Dictionary', function() {
 
