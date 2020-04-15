@@ -3,8 +3,7 @@
 [![npm](https://img.shields.io/npm/v/js.system.collections.svg)](https://www.npmjs.com/package/js.system.collections)
 [![LICENSE](https://img.shields.io/npm/l/merger-js.svg)](https://github.com/joao-neves95/js.system.collections/blob/master/LICENSE.md)
 
-Vanilla JavaScript ES collections inspired by .NET for Node.js and the browser. <br>
-It has been used in production, but keep in mind that **there are no tests**.
+Vanilla JavaScript ES collections inspired by .NET for Node.js and the browser.
 
 &nbsp;
 
