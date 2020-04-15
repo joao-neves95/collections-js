@@ -6,6 +6,8 @@
 Vanilla JavaScript ES collections inspired by .NET for Node.js and the browser. <br>
 It has been used in production, but keep in mind that **there are no tests**.
 
+&nbsp;
+
 ## Getting Started
 
 ### Install with NPM
@@ -20,7 +22,7 @@ or
 npm install js.system.collections
 ```
 
-### Use js.system.collections on the browser
+### Import on the browser
 
 ```
 <script src="path-to-dist-folder/js.system.collections.min.js"></script>
@@ -38,19 +40,15 @@ or
 <script src="https://raw.githubusercontent.com/joao-neves95/js.system.collections/master/dist/js.system.collections.min.js"></script>
 ```
 
-#### Window (Browser)
+#### Use from the browser (using the `window` object)
 ```
-const myDict = new Dictionary(true);
+const myDict = new Dictionary( true );
 ```
 
-#### CommonJS (Node.js and other environments that support module.exports)
+#### Use with CommonJS (For environments that support `module.exports`, like Node.js)
 ```
-const { Dictionary, List } = require( 'js.system.collections' ); // (node_modules)
-
-// OR
-
-const Dictionary = require( 'path-to-lib-folder/dictionary.js' );
-const List = require( 'path-to-lib-folder/list.js' );
+// Pointing to node_modules/ (Node.js), or dist/
+const { Dictionary, List } = require( 'js.system.collections' );
 
 const myList = new List( 'any' );
 const myStringList = new List( 'string' );
