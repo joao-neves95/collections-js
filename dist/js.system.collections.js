@@ -110,7 +110,7 @@
      * @param { number | false } index
      */
     get( index ) {
-      return this.elements[index] | false;
+      return this.elements[index] || false;
     }
 
     /**
@@ -179,8 +179,9 @@
    * @param {Number} value
    */
     __isInt( value ) {
-      if ( typeof value !== 'number' )
+      if ( typeof value !== 'number' ) {
         return false;
+      }
 
       return value % 1 === 0;
     }
@@ -190,8 +191,9 @@
      * @param {Number} value
      */
     __isFloat( value ) {
-      if ( typeof value !== 'number' )
+      if ( typeof value !== 'number' ) {
         return false;
+      }
 
       return value % 1 !== 0;
     }
@@ -311,8 +313,10 @@
      */
     remove( key ) {
       const index = this.findIndexOfKey( key );
-      if ( index === false )
+
+      if ( index === false ) {
         return false;
+      }
 
       this.____splice( index );
       return true;
@@ -328,6 +332,7 @@
      */
     updateByKey( key, newValue ) {
       const index = this.findIndexOfKey( key );
+
       if ( index === false ) {
         return false;
       }
@@ -354,7 +359,6 @@
         return true;
 
       } catch ( e ) {
-
         return false;
       }
     }
@@ -403,6 +407,7 @@
     getByKey( key ) {
       try {
         const elementAndIndex = this.____getElementAndIndexByKey( key );
+
         if ( elementAndIndex === false ) {
           return false;
         }
@@ -410,7 +415,7 @@
         return Object.values( elementAndIndex[1] )[0];
 
       } catch ( e ) {
-        console.error( e );
+        return false;
       }
     }
 
@@ -423,6 +428,7 @@
      */
     findIndexOfKey( key ) {
       const elementAndIndex = this.____getElementAndIndexByKey( key );
+
       if ( elementAndIndex === false ) {
         return false;
       }
@@ -524,8 +530,9 @@
     add( value ) {
       const canPush = this.__isCorrectType( value );
 
-      if ( canPush === false )
+      if ( canPush === false ) {
         throw ____errors2.wrongType( this.type );
+      }
 
       return this.____push( value );
     }
@@ -533,8 +540,9 @@
     update( index, value ) {
       const canPush = this.__isCorrectType( value );
 
-      if ( canPush === false )
+      if ( canPush === false ) {
         throw ____errors2.wrongType( this.type );
+      }
 
       this.elements[index] = value;
     }
