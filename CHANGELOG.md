@@ -3,7 +3,17 @@
 &nbsp;
 
 
-#### *v1.4.0 - 06/04/2020
+#### *v1.5.0 - 15/04/2020
+
+  - Added UMD compatibility support (AMD not tested).
+  - Added tests to the List and Dictionary.
+  - Multiple internal fixes (undefineds and exeptions) and refactorings.
+
+
+&nbsp;
+
+
+#### v1.4.0 - 06/04/2020
 
   - Fix on the the method "updateByIndex" of the Dictionary.
   - Added the method "removeByIndex( index )" to the Dictionary.
