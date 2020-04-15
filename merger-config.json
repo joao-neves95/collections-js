@@ -8,8 +8,8 @@
 	"uglify": false,
 	"autoBuild": true,
 	"notifications": true,
-	"updateOnLaunch": true,
-	"lastUpdateCheck": "2020-04-06T18:12:01.000Z",
+	"updateOnLaunch": false,
+	"lastUpdateCheck": "2020-04-12T21:36:05.000Z",
 	"sourceFiles": [
 		{
 			"source": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\js.system.collections.min.header.js",
@@ -28,5 +28,6 @@
 				"name": "js.system.collections.js"
 			}
 		}
-	]
+	],
+	"nodeModulesPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\node_modules"
 }

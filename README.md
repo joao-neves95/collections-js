@@ -1,14 +1,16 @@
-﻿# js.system.collections
- 
+# js.system.collections
+
 [![npm](https://img.shields.io/npm/v/js.system.collections.svg)](https://www.npmjs.com/package/js.system.collections)
 [![LICENSE](https://img.shields.io/npm/l/merger-js.svg)](https://github.com/joao-neves95/js.system.collections/blob/master/LICENSE.md)
 
 Vanilla JavaScript ES collections inspired by .NET for Node.js and the browser. <br>
 It has been used in production, but keep in mind that **there are no tests**.
 
+&nbsp;
+
 ## Getting Started
 
-### Install with NPM to use js.system.collections on Node.js
+### Install with NPM
 
 ```
 npm i js.system.collections
@@ -20,19 +22,10 @@ or
 npm install js.system.collections
 ```
 
-and use it like:
+### Import on the browser
 
 ```
-const { Dictionary, List } = require( 'js.system.collections' );
-const myDict = new Dictionary();
-const myList = new List();
-```
-
-
-### Use js.system.collections on the browser
-
-```
-<script src="js.system.collections.min.js"></script>
+<script src="path-to-dist-folder/js.system.collections.min.js"></script>
 ```
 
 or
@@ -45,6 +38,20 @@ or
 
 ```
 <script src="https://raw.githubusercontent.com/joao-neves95/js.system.collections/master/dist/js.system.collections.min.js"></script>
+```
+
+#### Use from the browser (using the `window` object)
+```
+const myDict = new Dictionary( true );
+```
+
+#### Use with CommonJS (For environments that support `module.exports`, like Node.js)
+```
+// Pointing to node_modules/ (Node.js), or dist/
+const { Dictionary, List } = require( 'js.system.collections' );
+
+const myList = new List( 'any' );
+const myStringList = new List( 'string' );
 ```
 
 &nbsp;

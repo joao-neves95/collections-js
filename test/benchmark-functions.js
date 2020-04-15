@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) 2019-2020 João Pedro Martins Neves - All Rights Reserved.
+ *
+ * js.system.collections is licensed under the MIT license,
+ * located in the root of this project, under the name "LICENSE.md".
+ *
+ */
+
 // BENCHMARKED IN: https://jsperf.com/github-joao-neves95-js-system-collections-dictionary
 
 // 1 _ 110,124,954 ±1.08% - 87% slower
