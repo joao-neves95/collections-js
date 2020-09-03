@@ -8,6 +8,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B2D097B3-66DC-43D7-BAE2-BEB9EA706987}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		CHANGELOG.md = CHANGELOG.md
+		LICENSE.md = LICENSE.md
+		merger-config.json = merger-config.json
+		package.json = package.json
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global

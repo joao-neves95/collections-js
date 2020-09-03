@@ -18,7 +18,6 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
     <Content Include=".editorconfig" />
-    <Content Include=".gitignore" />
     <Content Include="dist\js.system.collections.js" />
     <Content Include="dist\js.system.collections.min.js" />
     <Content Include="js.system.collections.sln.licenseheader" />
@@ -27,11 +26,6 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="lib\stack.js" />
-    <Content Include="merger-config.json" />
-    <Content Include="package.json" />
-    <Content Include="CHANGELOG.md" />
-    <Content Include="LICENSE.md" />
-    <Content Include="README.md" />
     <Content Include="test\benchmark-data.js" />
     <Content Include="test\benchmark-functions.js" />
     <Content Include="test\spec\dict.spec.js">
