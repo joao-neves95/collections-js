@@ -17,6 +17,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Content Include=".editorconfig" />
     <Content Include=".gitignore" />
     <Content Include="dist\js.system.collections.js" />
     <Content Include="dist\js.system.collections.min.js" />

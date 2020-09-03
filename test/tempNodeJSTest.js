@@ -8,7 +8,7 @@
 
 'use strict';
 const readline = require( 'readline' );
-const runTest = require('./tempTest');
+const runTest = require( './tempTest' );
 
 // ------------------------------------------------------------------------ //
 
@@ -16,13 +16,13 @@ runTest();
 
 // ------------------------------------------------------------------------ //
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+const rl = readline.createInterface( {
+  input: process.stdin,
+  output: process.stdout
+} );
 
 rl.question( 'Finito!', ( answer ) => {
-    rl.close();
-});
+  rl.close();
+} );
 
 // ------------------------------------------------------------------------ //

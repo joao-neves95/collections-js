@@ -10,14 +10,14 @@ let _Dictionary;
 let _List;
 
 try {
-    // Node.js.
-    _Dictionary = require('../index').Dictionary;
-    _List = require('../index').List;
+  // Node.js.
+  _Dictionary = require( '../index' ).Dictionary;
+  _List = require( '../index' ).List;
 
-} catch (e) {
-    // Browser.
-    _Dictionary = Dictionary;
-    _List = List;
+} catch ( e ) {
+  // Browser.
+  _Dictionary = Dictionary;
+  _List = List;
 }
 
 const runTest = () => {
@@ -89,11 +89,11 @@ const runTest = () => {
   console.debug( myList.getAll() );
 
   console.debug( 'Get the second element of List by index.' );
-  console.debug( myList.get(1) );
+  console.debug( myList.get( 1 ) );
 
   console.debug( 'Update the second element of the List by index with the correct type.' );
   myList.update( 1, 9.999 );
-  console.debug( myList.get(1) );
+  console.debug( myList.get( 1 ) );
   console.debug( 'Update the second element of the List by index with the wrong type. \nThrow error. \n(uncoment next line).' );
   // Uncomment to throw error.
   // myList.update( 2, 79 );
@@ -130,9 +130,9 @@ const runTest = () => {
 };
 
 try {
-    if ( process.env !== undefined )
-      module.exports = runTest;
+  if ( process.env !== undefined )
+    module.exports = runTest;
 
-} catch (e) {
-    // continue;
+} catch ( e ) {
+  // continue;
 }

@@ -1,10 +1,10 @@
-///*
-// * Copyright (c) 2019-2020 João Pedro Martins Neves - All Rights Reserved.
-// *
-// * js.system.collections is licensed under the MIT license,
-// * located in the root of this project, under the name "LICENSE.md".
-// *
-// */
+/*
+ * Copyright (c) 2019-2020 João Pedro Martins Neves - All Rights Reserved.
+ *
+ * js.system.collections is licensed under the MIT license,
+ * located in the root of this project, under the name "LICENSE.md".
+ *
+ */
 
 //const { Stack } = require( '../../dist/js.system.collections' );
 

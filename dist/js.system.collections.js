@@ -274,7 +274,7 @@
  *
  */
 
-(function (root, factory) {
+( function ( root, factory ) {
   if ( typeof define === 'function' && define.amd ) {
     // AMD.
     define( 'list', ['collection'], factory );
@@ -287,7 +287,7 @@
     // Browser.
     root.List = factory( root.Collection );
   }
-})( typeof global !== 'undefined' ? global : this.window || this.global, function( Collection ) {
+} )( typeof global !== 'undefined' ? global : this.window || this.global, function ( Collection ) {
 
   /**
    * @typedef { List }
@@ -368,7 +368,7 @@
   }
 
   return List;
-});
+} );
 
 /*
  * Copyright (c) 2019-2020 João Pedro Martins Neves - All Rights Reserved.
