@@ -3,7 +3,16 @@
 &nbsp;
 
 
-#### *v1.5.0 - 15/04/2020
+#### *v1.6.0 - 03/09/2020
+
+  - Added another implementation of a dictionary, `Dict`, with ~O(1) search instead of O(n).
+  - Multiple internal refactorings.
+  - Updated the API docs.
+
+&nbsp;
+
+
+#### v1.5.0 - 15/04/2020
 
   - Added UMD compatibility support (AMD not tested).
   - Added tests to the List and Dictionary.
