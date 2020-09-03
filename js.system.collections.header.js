@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2019-2020 João Pedro Martins Neves - All Rights Reserved.
  *
  * js.system.collections is licensed under the MIT license,
@@ -8,6 +8,8 @@
 
 // Temporary.
 // @import './lib/errors'
+// @import './lib/collectionBase'
 // @import './lib/collection'
-// @import './lib/dictionary'
 // @import './lib/list'
+// @import './lib/dictionary'
+// @import './lib/dict'

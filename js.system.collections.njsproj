@@ -21,6 +21,11 @@
     <Content Include="dist\js.system.collections.js" />
     <Content Include="dist\js.system.collections.min.js" />
     <Content Include="js.system.collections.sln.licenseheader" />
+    <Content Include="lib\collectionBase.js" />
+    <Content Include="lib\dict.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="lib\stack.js" />
     <Content Include="merger-config.json" />
     <Content Include="package.json" />
     <Content Include="CHANGELOG.md" />
@@ -28,17 +33,18 @@
     <Content Include="README.md" />
     <Content Include="test\benchmark-data.js" />
     <Content Include="test\benchmark-functions.js" />
+    <Content Include="test\spec\dict.spec.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="test\spec\dictionary.spec.js" />
     <Content Include="test\spec\list.spec.js" />
+    <Content Include="test\spec\stack.spec.js" />
     <Content Include="test\spec\support\jasmine.json" />
     <Content Include="test\tempBrowserTest.html" />
     <Content Include="test\tempTest.js" />
     <Content Include="test\test.js" />
-    <Content Include="TODO.md" />
     <Content Include="js.system.collections.min.header.js" />
     <Content Include="index.js" />
-    <Content Include="dist\collections-js.js" />
-    <Content Include="dist\collections-js.min.js" />
     <Content Include="lib\collection.js" />
     <Content Include="lib\dictionary.js" />
     <Content Include="lib\errors.js" />

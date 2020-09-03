@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019-2020 Jo„o Pedro Martins Neves - All Rights Reserved.
+ * Copyright (c) 2019-2020 Jo√£o Pedro Martins Neves - All Rights Reserved.
  *
  * js.system.collections is licensed under the MIT license,
  * located in the root of this project, under the name "LICENSE.md".
@@ -9,23 +9,23 @@
 const { Dictionary } = require( '../../dist/js.system.collections.js' );
 // const { Dictionary } = require( '../../index.js' );
 
-describe( 'The Dictionary', function() {
+describe( 'The Dictionary', function () {
 
-  beforeAll( function() {
+  beforeAll( function () {
     global.myDict = new Dictionary( true );
   } );
 
-  it( 'should add values', function() {
+  it( 'should add values', function () {
     global.myDict.add( 'one', 'This is one.' );
     global.myDict.add( 'two', 'This is two.' );
     global.myDict.add( 'three', 'This is three.' );
 
-    expect( global.myDict).toBeDefined();
+    expect( global.myDict ).toBeDefined();
     expect( global.myDict.length ).toBe( 3 );
     expect( global.myDict.isEmpty ).toBeFalse();
-  });
+  } );
 
-  it( 'should find items by key and index', function() {
+  it( 'should find items by key and index', function () {
     const indexOfThree = global.myDict.findIndexOfKey( 'three' );
     expect( indexOfThree ).toBe( 2 );
 
@@ -42,9 +42,9 @@ describe( 'The Dictionary', function() {
     const allKeys = global.myDict.getAllKeys();
     expect( allKeys[2] ).toBe( 'three' );
     expect( allKeys.length ).toBe( 4 );
-  });
+  } );
 
-  it( 'should update item values', function() {
+  it( 'should update item values', function () {
     const newTwoValue = 'This is two v2.';
     global.myDict.updateByIndex( 1, newTwoValue );
     expect( global.myDict.getByIndex( 1 ) ).toBe( newTwoValue );
@@ -52,9 +52,9 @@ describe( 'The Dictionary', function() {
     const newThreeValue = 'This is two v3.';
     global.myDict.updateByKey( 'two', newThreeValue );
     expect( global.myDict.getByKey( 'two' ) ).toBe( newThreeValue );
-  });
+  } );
 
-  it( 'should remove items', function() {
+  it( 'should remove items', function () {
     global.myDict.removeFirst();
     global.myDict.removeLast();
     const allValues = global.myDict.getAllValues();
@@ -63,19 +63,24 @@ describe( 'The Dictionary', function() {
 
     global.myDict.removeByIndex( 0 );
     expect( global.myDict.getAllValues().length ).toBe( 1 );
-  });
+  } );
 
-  it( 'should NOT add items with an existing key', function() {
+  it( 'should NOT add items with an existing key', function () {
     let error = false;
 
     try {
-      global.myDict.add( 'three', 'This is three AGAIN.');
+      global.myDict.add( 'three', 'This is three AGAIN.' );
 
-    } catch (e) {
+    } catch ( e ) {
       error = true;
     }
 
     expect( error ).toBeTrue();
-  });
+  } );
 
-});
+  afterAll( function () {
+    global.myDict = null;
+    global.myDict = undefined;
+  } );
+
+} );

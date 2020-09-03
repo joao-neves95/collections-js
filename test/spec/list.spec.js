@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019-2020 Jo„o Pedro Martins Neves - All Rights Reserved.
+ * Copyright (c) 2019-2020 Jo√£o Pedro Martins Neves - All Rights Reserved.
  *
  * js.system.collections is licensed under the MIT license,
  * located in the root of this project, under the name "LICENSE.md".
@@ -9,13 +9,13 @@
 // const { List } = require( '../../dist/js.system.collections.js' );
 const { List } = require( '../../index.js' );
 
-describe( 'The List', function() {
+describe( 'The List', function () {
 
-  beforeAll( function() {
+  beforeAll( function () {
     global.myList = new List( 'float' );
   } );
 
-  it( 'should add values', function() {
+  it( 'should add values', function () {
     expect( global.myList.isEmpty ).toBeTrue();
     global.myList.add( 1.5 );
     global.myList.add( 34.98 );
@@ -26,12 +26,12 @@ describe( 'The List', function() {
     expect( global.myList.isEmpty ).toBeFalse();
   } );
 
-  it( 'should check for values values', function() {
+  it( 'should check for values values', function () {
     expect( global.myList.contains( 26.8888 ) ).toBeTrue();
-    expect( global.myList.contains( 99.3 ) ).toBeFalse( );
+    expect( global.myList.contains( 99.3 ) ).toBeFalse();
   } );
 
-  it( 'should get and find elements', function() {
+  it( 'should get and find elements', function () {
     expect( global.myList.length ).toBe( 3 );
     global.myList.add( 29.65 );
 
@@ -41,12 +41,12 @@ describe( 'The List', function() {
     expect( global.myList.get( 23 ) ).toBeFalse();
   } );
 
-  it( 'should update values', function() {
+  it( 'should update values', function () {
     global.myList.update( 1, 9.999 );
     expect( global.myList.get( 1 ) ).toBe( 9.999 );
   } );
 
-  it( 'should NOT allow updates with the wrong type', function() {
+  it( 'should NOT allow updates with the wrong type', function () {
     let error = false;
 
     try {
@@ -59,7 +59,7 @@ describe( 'The List', function() {
     expect( error ).toBeTrue();
   } );
 
-  it( 'should NOT allow adding items with the wrong type', function() {
+  it( 'should NOT allow adding items with the wrong type', function () {
     let error = false;
 
     try {
@@ -72,11 +72,16 @@ describe( 'The List', function() {
     expect( error ).toBeTrue();
   } );
 
-  it( 'should remove items', function() {
+  it( 'should remove items', function () {
     global.myList.removeFirst();
     global.myList.removeLast();
 
     expect( global.myList.length ).toBe( 2 );
+  } );
+
+  afterAll( function () {
+    global.myList = null;
+    global.myList = undefined;
   } );
 
 } );
