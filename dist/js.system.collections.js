@@ -13,6 +13,7 @@
 // @import './lib/list'
 // @import './lib/dictionary'
 // @import './lib/dict'
+// @import './lib/dictionaryObj'
 
 /*
  * Copyright (c) 2019-2020 João Pedro Martins Neves - All Rights Reserved.
@@ -182,6 +183,14 @@
       }
 
       return value % 1 !== 0;
+    }
+
+    __isNullOrUndefined( value ) {
+      return value === null || value === undefined;
+    }
+
+    __isNullUndefinedOrFalse( value ) {
+      return this.__isNullOrUndefined( value ) || value === false;
     }
 
   }
@@ -397,8 +406,9 @@
   class Dictionary extends Collection {
     /**
      * Dictionary of key-value pairs.
-     * In order to have array-like features, this dictionary implementation is O(n), linear.
-     * You are probably looking for Dict.
+     * In order to have array-like features, this dictionary implementation
+     * is O(n), linear.
+     * You are probably looking for Dict or DictionaryObj.
      *
      * @param { Boolean } uniqueKeys
      * Optional.
@@ -421,11 +431,11 @@
     }
 
     /**
- * Returns an array with all the dictionary's keys.
- * O(n)
- *
- * @returns { any[] }
- */
+     * Returns an array with all the dictionary's keys.
+     * O(n)
+     *
+     * @returns { any[] }
+     */
     getAllKeys() {
       const allKeys = [];
 
@@ -842,7 +852,7 @@
         return [hashedKey, this.elements[hashedKey][key]];
       }
 
-      for ( let i = 1; ; ++i ) {
+      for ( let i = 0; ; ++i ) {
         hashedKey = this.____doubleHashKey( normalizedKey, i );
         currentDictKey = this.____keyAt( hashedKey );
 
@@ -896,7 +906,7 @@
 
       const hashedIndex = this.getHashedKey( key );
 
-      if ( !hashedIndex ) {
+      if ( this.__isNullUndefinedOrFalse( hashedIndex ) ) {
         return false;
       }
 
@@ -917,7 +927,7 @@
     update( key, newValue ) {
       const hashedIndex = this.getHashedKey( key );
 
-      if ( !hashedIndex ) {
+      if ( this.__isNullUndefinedOrFalse( hashedIndex ) ) {
         return false;
       }
 
@@ -951,7 +961,7 @@
 
     ____isEmptyHashSlot( hashedKey ) {
       // elem is set to false when removed.
-      return this.elements[hashedKey] === undefined || this.elements[hashedKey] === false;
+      return this.__isNullUndefinedOrFalse( this.elements[hashedKey] );
     }
 
     ____keyAt( index ) {
@@ -1083,5 +1093,73 @@
   }
 
   return Dict;
+} );
+
+/*
+ * Copyright (c) 2019-2020 João Pedro Martins Neves - All Rights Reserved.
+ *
+ * js.system.collections is licensed under the MIT license,
+ * located in the root of this project, under the name "LICENSE.md".
+ *
+ */
+
+( function ( root, factory ) {
+  if ( typeof define === 'function' && define.amd ) {
+    // AMD.
+    define( 'DictionaryObj', ['errors'], factory );
+
+  } else if ( typeof module === 'object' && module.exports ) {
+    // CommonJS.
+    module.exports['DictionaryObj'] = factory( require( './js.system.collections' )['Errors'] );
+
+  } else {
+    // Browser.
+    root.DictionaryObj = factory( root.Errors );
+  }
+} )( typeof global !== 'undefined' ? global : this.window || this.global, function ( Errors ) {
+
+  class DictionaryObj {
+
+    /**
+     * A lightweight implementation of a dictionary, based on an object.
+     * The time complexity is dependent on the vendor's browser engine.
+     *
+     */
+    constructor() {
+      this.elements = new Object();
+    }
+
+    get( key ) {
+      return this.elements[key];
+    }
+
+    getAllKeys() {
+      return Object.keys( this.elements );
+    }
+
+    getAllValues() {
+      return Object.value( this.elements );
+    }
+
+    add( key, value ) {
+      this.elements[key] = value;
+    }
+
+    update( key, value ) {
+      add( key, value );
+    }
+
+    remove( key ) {
+      delete this.elements[key];
+    }
+
+    forEachValue( Callback ) {
+      for ( item in this.elements ) {
+        Callback( this.elements[item] );
+      }
+    }
+  }
+
+  return DictionaryObj;
 } );
 
