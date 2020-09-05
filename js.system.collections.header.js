@@ -13,3 +13,4 @@
 // @import './lib/list'
 // @import './lib/dictionary'
 // @import './lib/dict'
+// @import './lib/dictionaryObj'
