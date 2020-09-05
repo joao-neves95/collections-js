@@ -2,8 +2,17 @@
 
 &nbsp;
 
+#### *v1.7.0 - 06/09/2020
 
-#### *v1.6.0 - 03/09/2020
+  - Added a new lightweight implementation of a dictionary, `DictionaryObj`.
+  - Small fix of bug that didn't made possible deletion and update of index 0.
+    This was due to, in those methods, it was being checked if the searched
+    return value was falsy (0 inclusive), instead of checking for undefined,
+    null or false.
+
+&nbsp;
+
+#### v1.6.0 - 03/09/2020
 
   - Added another implementation of a dictionary, `Dict`, with ~O(1) search instead of O(n).
   - Multiple internal refactorings.
@@ -11,16 +20,13 @@
 
 &nbsp;
 
-
 #### v1.5.0 - 15/04/2020
 
   - Added UMD compatibility support (AMD not tested).
   - Added tests to the List and Dictionary.
   - Multiple internal fixes (undefineds and exeptions) and refactorings.
 
-
 &nbsp;
-
 
 #### v1.4.0 - 06/04/2020
 
