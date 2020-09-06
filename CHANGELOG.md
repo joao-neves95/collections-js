@@ -2,7 +2,15 @@
 
 &nbsp;
 
-#### *v1.7.0 - 06/09/2020
+#### *v1.7.1 - 06/09/2020
+
+  - Added more methods to the `DictionaryObj`.
+  - Added tests to the `DictionaryObj`.
+  - Multiple fixes to the `DictionaryObj`.
+
+&nbsp;
+
+#### v1.7.0 - 06/09/2020
 
   - Added a new lightweight implementation of a dictionary, `DictionaryObj`.
   - Small fix of bug that didn't made possible deletion and update of index 0.
