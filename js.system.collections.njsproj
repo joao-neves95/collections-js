@@ -29,6 +29,7 @@
     <Content Include="lib\stack.js" />
     <Content Include="test\benchmark-data.js" />
     <Content Include="test\benchmark-functions.js" />
+    <Content Include="test\spec\dictionaryObj.spec.js" />
     <Content Include="test\spec\dict.spec.js">
       <SubType>Code</SubType>
     </Content>
