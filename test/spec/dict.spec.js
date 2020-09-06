@@ -129,23 +129,19 @@ describe( 'The Dict', function () {
     expect( global.myDict.____currentLength ).toBe( 0 );
   } );
 
-  //it( 'should remove all items by key and rehash with no problems', function () {
-  //  const numOfItems = 42;
-  //  addBulk();
+  it( 'should remove all items by key and rehash with no problems', function () {
+    const numOfItems = 42;
+    addBulk();
 
-  //  for ( let i = 0; i < numOfItems; ++i ) {
-  //    expect( global.myDict.remove( 'ITEM_' + i.toString() ) ).not.toBeFalse();
-  //    console.log( 'ITEM_' + i.toString() );
-  //  }
+    for ( let i = 0; i < numOfItems; ++i ) {
+      expect( global.myDict.remove( 'ITEM_' + i.toString() ) ).not.toBeFalse();
+    }
 
-  //  const allValues = global.myDict.getAllValues();
-
-  //  console.log( global.myDict.elements );
-
-  //  expect( allValues.length ).toBe( 0 );
-  //  expect( global.myDict.____currentLength ).toBe( 0 );
-  //  expect( global.myDict.____currentSize ).toBe( 4 );
-  //} );
+    const allValues = global.myDict.getAllValues();
+    expect( allValues.length ).toBe( 0 );
+    expect( global.myDict.____currentLength ).toBe( 0 );
+    expect( global.myDict.____currentSize ).toBe( 2 );
+  } );
 
   afterAll( function () {
     global.myDict = null;

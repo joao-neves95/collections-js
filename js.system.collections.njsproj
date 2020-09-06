@@ -25,6 +25,7 @@
     <Content Include="lib\dict.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="lib\dictionaryObj.js" />
     <Content Include="lib\stack.js" />
     <Content Include="test\benchmark-data.js" />
     <Content Include="test\benchmark-functions.js" />

@@ -10,6 +10,6 @@
 
 'use strict';
 
-const { List, Dictionary, Dict } = require( './dist/js.system.collections.min.js' );
+const { List, Dictionary, Dict, DictionaryObj } = require( './dist/js.system.collections.min.js' );
 
-module.exports = { List, Dictionary, Dict };
+module.exports = { List, Dictionary, Dict, DictionaryObj };
