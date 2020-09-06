@@ -587,10 +587,33 @@ const myStringList = new List( 'string' );
  * The time complexity is dependent on the vendor's browser engine.
 ```
 
+- **count**
+  ```js
+  .count
+  ```
+
+- **clear()**
+  ```js
+  .clear()
+  ```
+
 - **get( key )**
   ```js
   .get( key )
+  ```
+
+- **getValue( key )**
   ```js
+  /**
+   * Same as .get( key ).
+   */
+  .get( key )
+  ```
+
+- **containsKey( key )**
+  ```js
+  .containsKey( key )
+  ```
 
 - **getAllKeys()**
   ```js
