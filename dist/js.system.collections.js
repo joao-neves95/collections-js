@@ -193,6 +193,16 @@
       return this.__isNullOrUndefined( value ) || value === false;
     }
 
+    __combineNumbers( left, right ) {
+      let rightLength = 1;
+
+      while ( rightLength < right ) {
+        rightLength *= 10;
+      }
+
+      return left * rightLength + right;
+    }
+
   }
 
   return CollectionBase;
@@ -987,7 +997,7 @@
         let normalizedKey = 0;
 
         for ( let i = 0; i < key.length; ++i ) {
-          normalizedKey += key.charCodeAt( i );
+          normalizedKey = this.__combineNumbers( normalizedKey, key.charCodeAt( i ) );
         }
 
         return normalizedKey;
@@ -1192,4 +1202,3 @@
 
   return DictionaryObj;
 } );
-
