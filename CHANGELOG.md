@@ -2,7 +2,13 @@
 
 &nbsp;
 
-#### *v1.7.1 - 06/09/2020
+#### *v1.7.2 10/012/2020
+
+  - Fix on the `Dict`, that reduces the probability of hash collisions on string keys that are palindromes or with the same letters.
+
+&nbsp;
+
+#### v1.7.1 - 06/09/2020
 
   - Added more methods to the `DictionaryObj`.
   - Added tests to the `DictionaryObj`.
