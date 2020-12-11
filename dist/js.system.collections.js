@@ -196,7 +196,7 @@
     __combineNumbers( left, right ) {
       let rightLength = 1;
 
-      while ( rightLength < right ) {
+      while ( rightLength <= right ) {
         rightLength *= 10;
       }
 
@@ -1202,3 +1202,4 @@
 
   return DictionaryObj;
 } );
+
