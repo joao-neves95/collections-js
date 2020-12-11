@@ -2,9 +2,15 @@
 
 &nbsp;
 
-#### *v1.7.2 10/012/2020
+#### *v1.7.3 11/12/2020
 
-  - Fix on the `Dict`, that reduces the probability of hash collisions on string keys that are palindromes or with the same letters.
+  - Small improvement on the `Dict` hashing system.
+
+&nbsp;
+
+#### v1.7.2 10/12/2020
+
+  - Fix on the `Dict`, that reduces the probability of hash collisions on string keys that have the same letters, like palindromes for example.
 
 &nbsp;
 
